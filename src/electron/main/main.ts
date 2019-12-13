@@ -1,22 +1,29 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { app, BrowserWindow } from 'electron';
+import { autoUpdater } from 'electron-updater';
+import { AutoUpdaterClient } from 'electron/auto-update/auto-updater-client';
 import { OSType, PlatformInfo } from 'electron/window-management/platform-info';
 import * as path from 'path';
+import { mainWindowConfig } from './main-window-config';
 
 let mainWindow: BrowserWindow;
 const platformInfo = new PlatformInfo(process);
+
+let recurringUpdateCheck;
+const electronAutoUpdateCheck = new AutoUpdaterClient(autoUpdater);
+
 const createWindow = () => {
     const os = platformInfo.getOs();
     mainWindow = new BrowserWindow({
         show: false,
         webPreferences: { nodeIntegration: true },
         titleBarStyle: 'hidden',
-        width: 600,
-        height: 391,
+        width: mainWindowConfig.defaultWidth,
+        height: mainWindowConfig.defaultHeight,
         frame: os === OSType.Mac,
-        minHeight: 300,
-        minWidth: 400,
+        minHeight: mainWindowConfig.minHeight,
+        minWidth: mainWindowConfig.minWidth,
         icon: path.resolve(__dirname, '../icons/brand/blue/brand-blue-512px.png'),
     });
     if (platformInfo.isMac()) {
@@ -34,6 +41,19 @@ const createWindow = () => {
         mainWindow.show();
         enableDevMode(mainWindow);
     });
+
+    mainWindow.on('closed', () => {
+        // Dereference the window object, to force garbage collection
+        mainWindow = null;
+    });
+
+    electronAutoUpdateCheck
+        .check()
+        .then(() => {
+            console.log('checked for updates');
+            setupRecurringUpdateCheck();
+        })
+        .catch(console.log);
 };
 
 const enableDevMode = (window: BrowserWindow) => {
@@ -44,4 +64,15 @@ const enableDevMode = (window: BrowserWindow) => {
     }
 };
 
+const setupRecurringUpdateCheck = () => {
+    recurringUpdateCheck = setInterval(async () => {
+        await electronAutoUpdateCheck.check();
+    }, 60 * 60 * 1000);
+};
+
 app.on('ready', createWindow);
+
+app.on('window-all-closed', () => {
+    clearInterval(recurringUpdateCheck);
+    app.quit();
+});

@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { browser, ExtensionTypes, Permissions, Tabs } from 'webextension-polyfill-ts';
+import { browser, ExtensionTypes, Notifications, Permissions, Tabs, Windows } from 'webextension-polyfill-ts';
+
 import { BrowserAdapter } from './browser-adapter';
 import { CommandsAdapter } from './commands-adapter';
 import { StorageAdapter } from './storage-adapter';
@@ -10,8 +11,8 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
         return `chrome://extensions/?id=${chrome.runtime.id}`;
     }
 
-    public getAllWindows(getInfo: chrome.windows.GetInfo, callback: (chromeWindows: chrome.windows.Window[]) => void): void {
-        chrome.windows.getAll(getInfo, callback);
+    public getAllWindows(getInfo: Windows.GetAllGetInfoType): Promise<Windows.Window[]> {
+        return browser.windows.getAll(getInfo);
     }
 
     public addListenerToTabsOnActivated(callback: (activeInfo: chrome.tabs.TabActiveInfo) => void): void {
@@ -53,10 +54,6 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
         });
     }
 
-    public requestPermissions(permissions: Permissions.Permissions): Promise<boolean> {
-        return browser.permissions.request(permissions);
-    }
-
     public executeScriptInTab(tabId: number, details: ExtensionTypes.InjectDetails): Promise<any[]> {
         return browser.tabs.executeScript(tabId, details);
     }
@@ -69,27 +66,8 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
         return browser.tabs.create({ url, active: true, pinned: false });
     }
 
-    public createTabInNewWindow(url: string, callback?: (tab: chrome.tabs.Tab) => void): void {
-        chrome.windows.create(
-            {
-                url: url,
-                focused: true,
-            },
-            window => {
-                callback(window.tabs[0]);
-            },
-        );
-    }
-
-    public createInactiveTab(url: string, callback: (tab: chrome.tabs.Tab) => void): void {
-        chrome.tabs.create(
-            {
-                url: url,
-                active: false,
-                pinned: false,
-            },
-            callback,
-        );
+    public createTabInNewWindow(url: string): Promise<Tabs.Tab> {
+        return browser.windows.create({ url, focused: true }).then(window => window.tabs[0]);
     }
 
     public closeTab(tabId: number): void {
@@ -106,22 +84,12 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
         });
     }
 
-    public sendMessageToTab(tabId: number, message: any): void {
-        chrome.tabs.sendMessage(tabId, message);
+    public sendMessageToTab(tabId: number, message: any): Promise<void> {
+        return browser.tabs.sendMessage(tabId, message);
     }
 
-    public sendMessageToAllFramesAndTabs(message: any): void {
-        chrome.runtime.sendMessage(message);
-
-        chrome.tabs.query({}, tabs => {
-            for (let i = 0; i < tabs.length; ++i) {
-                chrome.tabs.sendMessage(tabs[i].id, message);
-            }
-        });
-    }
-
-    public sendMessageToFrames(message: any): void {
-        chrome.runtime.sendMessage(message);
+    public sendMessageToFrames(message: any): Promise<void> {
+        return browser.runtime.sendMessage(message);
     }
 
     public setUserData(items: Object): Promise<void> {
@@ -140,8 +108,8 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
         return chrome.runtime.lastError;
     }
 
-    public createNotification(options: chrome.notifications.NotificationOptions): void {
-        chrome.notifications.create(options);
+    public createNotification(options: Notifications.CreateNotificationOptions): Promise<string> {
+        return browser.notifications.create(options);
     }
 
     public isAllowedFileSchemeAccess(callback: (isAllowed: boolean) => void): void {
@@ -190,5 +158,23 @@ export class ChromeAdapter implements BrowserAdapter, StorageAdapter, CommandsAd
 
     public getUrl(urlPart: string): string {
         return chrome.extension.getURL(urlPart);
+    }
+
+    public requestPermissions(permissions: Permissions.Permissions): Promise<boolean> {
+        return browser.permissions.request(permissions);
+    }
+
+    public addListenerOnPermissionsAdded(callback: (permissions: Permissions.Permissions) => void): void {
+        // casting browser as any due to typings for permissions onAdded not currently supported.
+        (browser as any).permissions.onAdded.addListener(callback);
+    }
+
+    public addListenerOnPermissionsRemoved(callback: (permissions: Permissions.Permissions) => void): void {
+        // casting browser as any due to typings for permissions onRemoved not currently supported.
+        (browser as any).permissions.onRemoved.addListener(callback);
+    }
+
+    public containsPermissions(permissions: Permissions.Permissions): Promise<boolean> {
+        return browser.permissions.contains(permissions);
     }
 }

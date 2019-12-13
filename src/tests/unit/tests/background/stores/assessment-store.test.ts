@@ -19,9 +19,8 @@ import { AssessmentDataConverter } from 'background/assessment-data-converter';
 import { AssessmentDataRemover } from 'background/assessment-data-remover';
 import { InitialAssessmentStoreDataGenerator } from 'background/initial-assessment-store-data-generator';
 import { AssessmentStore } from 'background/stores/assessment-store';
-import * as _ from 'lodash';
+import { cloneDeep } from 'lodash';
 import { IMock, It, Mock, MockBehavior, Times } from 'typemoq';
-
 import { BrowserAdapter } from '../../../../../common/browser-adapters/browser-adapter';
 import { AssesssmentVisualizationConfiguration } from '../../../../../common/configs/assesssment-visualization-configuration';
 import { IndexedDBAPI } from '../../../../../common/indexedDB/indexedDB';
@@ -454,6 +453,7 @@ describe('AssessmentStoreTest', () => {
             scanResult: {} as ScanResults,
             testType: assessmentType,
             key: requirementKey,
+            pageHasIframes: true,
         };
 
         const expectedInstanceMap = {};
@@ -696,7 +696,7 @@ describe('AssessmentStoreTest', () => {
 
         assessmentMock.setup(am => am.getVisualizationConfiguration()).returns(() => configStub);
 
-        const expectedInstanceMap = _.cloneDeep(generatedAssessmentInstancesMap);
+        const expectedInstanceMap = cloneDeep(generatedAssessmentInstancesMap);
         expectedInstanceMap.selector.testStepResults[requirementKey] = {
             status: ManualTestStatus.PASS,
             originalStatus: ManualTestStatus.UNKNOWN,
@@ -838,7 +838,7 @@ describe('AssessmentStoreTest', () => {
 
         assessmentMock.setup(am => am.getVisualizationConfiguration()).returns(() => configStub);
 
-        const expectedInstancesMap = _.cloneDeep(generatedAssessmentInstancesMap);
+        const expectedInstancesMap = cloneDeep(generatedAssessmentInstancesMap);
         expectedInstancesMap.selector.testStepResults[requirementKey].isVisualizationEnabled = true;
 
         const expectedAssessment = new AssessmentDataBuilder().with('generatedAssessmentInstancesMap', expectedInstancesMap).build();
@@ -872,7 +872,7 @@ describe('AssessmentStoreTest', () => {
         };
 
         const assessmentData = new AssessmentDataBuilder()
-            .with('generatedAssessmentInstancesMap', _.cloneDeep(generatedAssessmentInstancesMap))
+            .with('generatedAssessmentInstancesMap', cloneDeep(generatedAssessmentInstancesMap))
             .build();
 
         const initialState = getStateWithAssessment(assessmentData);
@@ -888,7 +888,7 @@ describe('AssessmentStoreTest', () => {
 
         assessmentMock.setup(am => am.getVisualizationConfiguration()).returns(() => configStub);
 
-        const expectedInstancesMap = _.cloneDeep(generatedAssessmentInstancesMap);
+        const expectedInstancesMap = cloneDeep(generatedAssessmentInstancesMap);
         expectedInstancesMap.selector2.testStepResults[requirementKey].isVisualizationEnabled = true;
 
         const expectedAssessment = new AssessmentDataBuilder().with('generatedAssessmentInstancesMap', expectedInstancesMap).build();
@@ -913,7 +913,7 @@ describe('AssessmentStoreTest', () => {
         };
 
         const assessmentData = new AssessmentDataBuilder()
-            .with('generatedAssessmentInstancesMap', _.cloneDeep(generatedAssessmentInstancesMap))
+            .with('generatedAssessmentInstancesMap', cloneDeep(generatedAssessmentInstancesMap))
             .with('testStepStatus', { [requirementKey]: generateTestStepData(ManualTestStatus.UNKNOWN, false) })
             .build();
 
@@ -933,7 +933,7 @@ describe('AssessmentStoreTest', () => {
 
         assessmentMock.setup(am => am.getVisualizationConfiguration()).returns(() => configStub);
 
-        const expectedInstancesMap = _.cloneDeep(generatedAssessmentInstancesMap);
+        const expectedInstancesMap = cloneDeep(generatedAssessmentInstancesMap);
         expectedInstancesMap.selector.testStepResults[requirementKey].status = ManualTestStatus.FAIL;
         expectedInstancesMap.selector.testStepResults[requirementKey].originalStatus = null;
 
@@ -1008,7 +1008,7 @@ describe('AssessmentStoreTest', () => {
         };
 
         const assessmentData = new AssessmentDataBuilder()
-            .with('generatedAssessmentInstancesMap', _.cloneDeep(generatedAssessmentInstancesMap))
+            .with('generatedAssessmentInstancesMap', cloneDeep(generatedAssessmentInstancesMap))
             .with('testStepStatus', { [requirementKey]: getDefaultTestStepData() })
             .build();
 
@@ -1029,7 +1029,7 @@ describe('AssessmentStoreTest', () => {
 
         assessmentMock.setup(am => am.getVisualizationConfiguration()).returns(() => configStub);
 
-        const expectedInstancesMap = _.cloneDeep(generatedAssessmentInstancesMap);
+        const expectedInstancesMap = cloneDeep(generatedAssessmentInstancesMap);
         expectedInstancesMap[selector].testStepResults[requirementKey].originalStatus = ManualTestStatus.UNKNOWN;
         expectedInstancesMap[selector].testStepResults[requirementKey].status = ManualTestStatus.FAIL;
 
@@ -1385,7 +1385,7 @@ describe('AssessmentStoreTest', () => {
     test('on updateSelectedPivotChild: when selected pivot is not assessment', () => {
         const payload: UpdateSelectedDetailsViewPayload = {
             detailsViewType: assessmentType,
-            pivotType: DetailsViewPivotType.allTest,
+            pivotType: DetailsViewPivotType.fastPass,
         };
 
         assessmentsProviderMock.setup(apm => apm.forType(assessmentType)).verifiable(Times.never());

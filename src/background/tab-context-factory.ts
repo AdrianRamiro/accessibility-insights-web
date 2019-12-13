@@ -3,20 +3,21 @@
 import { AssessmentsProvider } from 'assessments/types/assessments-provider';
 import { BrowserAdapter } from 'common/browser-adapters/browser-adapter';
 import { VisualizationConfigurationFactory } from 'common/configs/visualization-configuration-factory';
+import { Logger } from 'common/logging/logger';
 import { NotificationCreator } from 'common/notification-creator';
 import { PromiseFactory } from 'common/promises/promise-factory';
 import { StateDispatcher } from 'common/state-dispatcher';
 import { WindowUtils } from 'common/window-utils';
-
-import { InjectionActionCreator } from 'background/actions/injection-action-creator';
 import { ActionCreator } from './actions/action-creator';
 import { ActionHub } from './actions/action-hub';
 import { CardSelectionActionCreator } from './actions/card-selection-action-creator';
 import { ContentActionCreator } from './actions/content-action-creator';
 import { DetailsViewActionCreator } from './actions/details-view-action-creator';
 import { DevToolsActionCreator } from './actions/dev-tools-action-creator';
+import { InjectionActionCreator } from './actions/injection-action-creator';
 import { InspectActionCreator } from './actions/inspect-action-creator';
 import { PathSnippetActionCreator } from './actions/path-snippet-action-creator';
+import { PopupActionCreator } from './actions/popup-action-creator';
 import { ScopingPanelActionCreator } from './actions/scoping-panel-action-creator';
 import { ShortcutsPageActionCreator } from './actions/shortcuts-page-action-creator';
 import { TabActionCreator } from './actions/tab-action-creator';
@@ -44,10 +45,11 @@ export class TabContextFactory {
         private assessmentStore: AssessmentStore,
         private assessmentsProvider: AssessmentsProvider,
         private readonly promiseFactory: PromiseFactory,
+        private readonly logger: Logger,
     ) {}
 
     public createTabContext(
-        broadcastMessage: (message) => void,
+        broadcastMessage: (message) => Promise<void>,
         browserAdapter: BrowserAdapter,
         detailsViewController: DetailsViewController,
         tabId: number,
@@ -58,6 +60,7 @@ export class TabContextFactory {
         const notificationCreator = new NotificationCreator(
             browserAdapter,
             this.visualizationConfigurationFactory,
+            this.logger,
         );
         const shortcutsPageController = new ShortcutsPageController(browserAdapter);
 
@@ -65,6 +68,7 @@ export class TabContextFactory {
             interpreter,
             shortcutsPageController,
             this.telemetryEventHandler,
+            this.logger,
         );
 
         const actionCreator = new ActionCreator(
@@ -90,50 +94,47 @@ export class TabContextFactory {
             browserAdapter,
             this.telemetryEventHandler,
         );
-
+        const popupActionCreator = new PopupActionCreator(
+            interpreter,
+            actionsHub.tabActions,
+            this.telemetryEventHandler,
+        );
         const devToolsActionCreator = new DevToolsActionCreator(
             interpreter,
             actionsHub.devToolActions,
             this.telemetryEventHandler,
         );
-
         const inspectActionsCreator = new InspectActionCreator(
             interpreter,
             actionsHub.inspectActions,
             this.telemetryEventHandler,
             browserAdapter,
         );
-
         const pathSnippetActionCreator = new PathSnippetActionCreator(
             interpreter,
             actionsHub.pathSnippetActions,
         );
-
         const scanResultActionCreator = new UnifiedScanResultActionCreator(
             interpreter,
             actionsHub.scanResultActions,
         );
-
         const scopingPanelActionCreator = new ScopingPanelActionCreator(
             interpreter,
             actionsHub.scopingActions,
             this.telemetryEventHandler,
             detailsViewController,
         );
-
         const contentActionCreator = new ContentActionCreator(
             interpreter,
             actionsHub.contentActions,
             this.telemetryEventHandler,
             detailsViewController,
         );
-
         const cardSelectionActionCreator = new CardSelectionActionCreator(
             interpreter,
             actionsHub.cardSelectionActions,
             this.telemetryEventHandler,
         );
-
         const injectionActionCreator = new InjectionActionCreator(
             interpreter,
             actionsHub.injectionActions,
@@ -165,6 +166,7 @@ export class TabContextFactory {
         inspectActionsCreator.registerCallbacks();
         pathSnippetActionCreator.registerCallbacks();
         tabActionCreator.registerCallbacks();
+        popupActionCreator.registerCallbacks();
         scopingPanelActionCreator.registerCallbacks();
         contentActionCreator.registerCallbacks();
         scanResultActionCreator.registerCallbacks();
@@ -172,7 +174,7 @@ export class TabContextFactory {
         injectionActionCreator.registerCallbacks();
 
         injectorController.initialize();
-        const dispatcher = new StateDispatcher(broadcastMessage, storeHub);
+        const dispatcher = new StateDispatcher(broadcastMessage, storeHub, this.logger);
         dispatcher.initialize();
 
         return new TabContext(interpreter, storeHub);

@@ -1,19 +1,19 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { IMock, It, Mock, MockBehavior, Times } from 'typemoq';
-
 import { SetLaunchPanelState } from 'background/actions/action-payloads';
 import { AssessmentActions } from 'background/actions/assessment-actions';
 import { CommandActions } from 'background/actions/command-actions';
 import { FeatureFlagActions } from 'background/actions/feature-flag-actions';
 import { GlobalActionHub } from 'background/actions/global-action-hub';
 import { LaunchPanelStateActions } from 'background/actions/launch-panel-state-action';
+import { PermissionsStateActions } from 'background/actions/permissions-state-actions';
 import { UserConfigurationActions } from 'background/actions/user-configuration-actions';
 import { GlobalActionCreator } from 'background/global-action-creators/global-action-creator';
 import { Interpreter } from 'background/interpreter';
 import { TelemetryEventHandler } from 'background/telemetry/telemetry-event-handler';
+import { Action } from 'common/flux/action';
+import { IMock, It, Mock, MockBehavior, Times } from 'typemoq';
 import { CommandsAdapter } from '../../../../../common/browser-adapters/commands-adapter';
-import { Action } from '../../../../../common/flux/action';
 import { getStoreStateMessage, Messages } from '../../../../../common/messages';
 import { StoreNames } from '../../../../../common/stores/store-names';
 import { LaunchPanelType } from '../../../../../popup/components/popup-view';
@@ -107,6 +107,7 @@ class GlobalActionCreatorValidator {
     private launchPanelStateActionsContainerMock = Mock.ofType(LaunchPanelStateActions);
     private assessmentActionsContainerMock = Mock.ofType(AssessmentActions);
     private userConfigActionsContainerMock = Mock.ofType(UserConfigurationActions);
+    private permissionsStateActionsContainerMock = Mock.ofType(PermissionsStateActions);
     private interpreterMock = Mock.ofType<Interpreter>();
     private commandsAdapterMock = Mock.ofType<CommandsAdapter>();
 
@@ -119,6 +120,7 @@ class GlobalActionCreatorValidator {
         scopingActions: null,
         assessmentActions: this.assessmentActionsContainerMock.object,
         userConfigurationActions: this.userConfigActionsContainerMock.object,
+        permissionsStateActions: this.permissionsStateActionsContainerMock.object,
     };
 
     private actionsSetup: boolean = false;

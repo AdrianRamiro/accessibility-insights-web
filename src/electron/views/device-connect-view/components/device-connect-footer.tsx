@@ -6,7 +6,10 @@ import { WindowStateActionCreator } from 'electron/flux/action-creator/window-st
 import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import * as React from 'react';
 
-import { deviceConnectFooter, footerButtonCancel, footerButtonStart } from './device-connect-footer.scss';
+import * as styles from './device-connect-footer.scss';
+
+export const deviceConnectCancelAutomationId = 'device-connect-footer-cancel';
+export const deviceConnectStartAutomationId = 'device-connect-footer-start';
 
 export interface DeviceConnectFooterDeps {
     windowStateActionCreator: WindowStateActionCreator;
@@ -19,20 +22,29 @@ export interface DeviceConnectFooterProps {
     deps: DeviceConnectFooterDeps;
 }
 
-export const DeviceConnectFooter = NamedFC<DeviceConnectFooterProps>('DeviceConnectFooter', (props: DeviceConnectFooterProps) => {
-    const onCancelClick = () => props.cancelClick();
-    return (
-        <footer className={deviceConnectFooter}>
-            <DefaultButton className={footerButtonCancel} onClick={onCancelClick} text="Cancel"></DefaultButton>
-            <PrimaryButton
-                className={footerButtonStart}
-                onClick={() => {
-                    props.deps.windowStateActionCreator.setRoute({ routeId: 'resultsView' });
-                    props.deps.windowFrameActionCreator.maximize();
-                }}
-                disabled={!props.canStartTesting}
-                text="Start testing"
-            ></PrimaryButton>
-        </footer>
-    );
-});
+export const DeviceConnectFooter = NamedFC<DeviceConnectFooterProps>(
+    'DeviceConnectFooter',
+    (props: DeviceConnectFooterProps) => {
+        const onCancelClick = () => props.cancelClick();
+        return (
+            <footer className={styles.deviceConnectFooter}>
+                <DefaultButton
+                    data-automation-id={deviceConnectCancelAutomationId}
+                    className={styles.footerButtonCancel}
+                    onClick={onCancelClick}
+                    text="Cancel"
+                ></DefaultButton>
+                <PrimaryButton
+                    data-automation-id={deviceConnectStartAutomationId}
+                    className={styles.footerButtonStart}
+                    onClick={() => {
+                        props.deps.windowStateActionCreator.setRoute({ routeId: 'resultsView' });
+                        props.deps.windowFrameActionCreator.maximize();
+                    }}
+                    disabled={!props.canStartTesting}
+                    text="Start testing"
+                ></PrimaryButton>
+            </footer>
+        );
+    },
+);

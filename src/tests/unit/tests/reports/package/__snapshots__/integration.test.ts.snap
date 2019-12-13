@@ -489,6 +489,7 @@ exports[`report package integration with issues 1`] = `
       >
         <div
           class="resultSection"
+          data-automation-id="result-section"
         >
           <h2>
             <span
@@ -556,6 +557,7 @@ exports[`report package integration with issues 1`] = `
           </h2>
           <div
             class="ruleDetailsGroup"
+            data-automation-id="rule-details-group"
           >
             <div
               class="collapsible-container collapsibleRuleDetailsGroup collapsed"
@@ -627,6 +629,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         bypass
                       </span>
@@ -669,10 +672,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -690,7 +695,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -704,7 +709,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -718,7 +723,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -729,13 +734,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         No valid skip link found
@@ -829,6 +832,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         color-contrast
                       </span>
@@ -871,10 +875,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -892,7 +898,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -906,7 +912,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -920,7 +926,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -931,13 +937,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         <span
@@ -947,14 +951,14 @@ exports[`report package integration with issues 1`] = `
                                             Element has insufficient color contrast of 2.52 (foreground color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#8a94a8"
                                           />
                                           <span>
                                             #8a94a8, background color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#e7ecd8"
                                           />
                                           <span>
@@ -962,7 +966,7 @@ exports[`report package integration with issues 1`] = `
                                           </span>
                                         </span>
                                         <span
-                                          class="screen-reader-only"
+                                          class="screenReaderOnly"
                                         >
                                           Element has insufficient color contrast of 2.52 (foreground color: #8a94a8, background color: #e7ecd8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1
                                         </span>
@@ -980,6 +984,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -997,7 +1002,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1011,7 +1016,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1025,7 +1030,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1036,13 +1041,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         <span
@@ -1052,14 +1055,14 @@ exports[`report package integration with issues 1`] = `
                                             Element has insufficient color contrast of 2.52 (foreground color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#8a94a8"
                                           />
                                           <span>
                                             #8a94a8, background color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#e7ecd8"
                                           />
                                           <span>
@@ -1067,7 +1070,7 @@ exports[`report package integration with issues 1`] = `
                                           </span>
                                         </span>
                                         <span
-                                          class="screen-reader-only"
+                                          class="screenReaderOnly"
                                         >
                                           Element has insufficient color contrast of 2.52 (foreground color: #8a94a8, background color: #e7ecd8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1
                                         </span>
@@ -1085,6 +1088,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1102,7 +1106,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1116,7 +1120,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1130,7 +1134,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1141,13 +1145,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         <span
@@ -1157,14 +1159,14 @@ exports[`report package integration with issues 1`] = `
                                             Element has insufficient color contrast of 2.52 (foreground color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#8a94a8"
                                           />
                                           <span>
                                             #8a94a8, background color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#e7ecd8"
                                           />
                                           <span>
@@ -1172,7 +1174,7 @@ exports[`report package integration with issues 1`] = `
                                           </span>
                                         </span>
                                         <span
-                                          class="screen-reader-only"
+                                          class="screenReaderOnly"
                                         >
                                           Element has insufficient color contrast of 2.52 (foreground color: #8a94a8, background color: #e7ecd8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1
                                         </span>
@@ -1190,6 +1192,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1207,7 +1210,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1221,7 +1224,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1235,7 +1238,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1246,13 +1249,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         <span
@@ -1262,14 +1263,14 @@ exports[`report package integration with issues 1`] = `
                                             Element has insufficient color contrast of 2.52 (foreground color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#8a94a8"
                                           />
                                           <span>
                                             #8a94a8, background color: 
                                           </span>
                                           <span
-                                            class="fix-instruction-color-box"
+                                            class="fixInstructionColorBox"
                                             style="background-color:#e7ecd8"
                                           />
                                           <span>
@@ -1277,7 +1278,7 @@ exports[`report package integration with issues 1`] = `
                                           </span>
                                         </span>
                                         <span
-                                          class="screen-reader-only"
+                                          class="screenReaderOnly"
                                         >
                                           Element has insufficient color contrast of 2.52 (foreground color: #8a94a8, background color: #e7ecd8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1
                                         </span>
@@ -1365,6 +1366,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         html-has-lang
                       </span>
@@ -1407,10 +1409,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1428,7 +1432,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1442,7 +1446,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1456,7 +1460,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1467,13 +1471,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         The &lt;html&gt; element does not have a lang attribute
@@ -1561,6 +1563,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         image-alt
                       </span>
@@ -1603,10 +1606,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1624,7 +1629,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1638,7 +1643,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1652,7 +1657,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1663,13 +1668,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Element does not have an alt attribute
@@ -1702,6 +1705,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1719,7 +1723,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1733,7 +1737,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1747,7 +1751,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1758,13 +1762,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Element does not have an alt attribute
@@ -1797,6 +1799,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1814,7 +1817,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1828,7 +1831,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1842,7 +1845,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1853,13 +1856,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Element does not have an alt attribute
@@ -1892,6 +1893,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -1909,7 +1911,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -1923,7 +1925,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -1937,7 +1939,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -1948,13 +1950,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Element does not have an alt attribute
@@ -2057,6 +2057,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         label
                       </span>
@@ -2099,10 +2100,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2120,7 +2123,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2134,7 +2137,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2148,7 +2151,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2159,13 +2162,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2195,6 +2196,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2212,7 +2214,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2226,7 +2228,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2240,7 +2242,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2251,13 +2253,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2287,6 +2287,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2304,7 +2305,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2318,7 +2319,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2332,7 +2333,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2343,13 +2344,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2379,6 +2378,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2396,7 +2396,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2410,7 +2410,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2424,7 +2424,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2435,13 +2435,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2471,6 +2469,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2488,7 +2487,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2502,7 +2501,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2516,7 +2515,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2527,13 +2526,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2563,6 +2560,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2580,7 +2578,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2594,7 +2592,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2608,7 +2606,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2619,13 +2617,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2655,6 +2651,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2672,7 +2669,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2686,7 +2683,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2700,7 +2697,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2711,13 +2708,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2747,6 +2742,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2764,7 +2760,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2778,7 +2774,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2792,7 +2788,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2803,13 +2799,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2839,6 +2833,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2856,7 +2851,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2870,7 +2865,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2884,7 +2879,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2895,13 +2890,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -2931,6 +2924,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -2948,7 +2942,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -2962,7 +2956,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -2976,7 +2970,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -2987,13 +2981,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -3023,6 +3015,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3040,7 +3033,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3054,7 +3047,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3068,7 +3061,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3079,13 +3072,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -3115,6 +3106,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3132,7 +3124,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3146,7 +3138,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3160,7 +3152,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3171,13 +3163,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -3207,6 +3197,7 @@ exports[`report package integration with issues 1`] = `
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3224,7 +3215,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3238,7 +3229,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3252,7 +3243,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3263,13 +3254,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix ONE of the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         aria-label attribute does not exist or is empty
@@ -3369,6 +3358,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         landmark-one-main
                       </span>
@@ -3411,10 +3401,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3432,7 +3424,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3446,7 +3438,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3460,7 +3452,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3471,13 +3463,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Document does not have a main landmark
@@ -3565,6 +3555,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         page-has-heading-one
                       </span>
@@ -3607,10 +3598,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3628,7 +3621,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3642,7 +3635,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3656,7 +3649,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3667,13 +3660,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Page must have a level-one heading
@@ -3761,6 +3752,7 @@ exports[`report package integration with issues 1`] = `
                     <span>
                       <span
                         class="rule-details-id"
+                        data-automation-id="cards-rule-id"
                       >
                         region
                       </span>
@@ -3803,10 +3795,12 @@ exports[`report package integration with issues 1`] = `
                 <ul
                   aria-label="failed instances with path, snippet and how to fix information"
                   class="instanceDetailsList"
+                  data-automation-id="cards-rule-content"
                 >
                   <li>
                     <div
                       class="instanceDetailsCardContainer"
+                      data-automation-id="instance-card"
                       role="table"
                     >
                       <div
@@ -3824,7 +3818,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Path
                               </th>
@@ -3838,7 +3832,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 Snippet
                               </th>
@@ -3852,7 +3846,7 @@ exports[`report package integration with issues 1`] = `
                               class="row"
                             >
                               <th
-                                class="label"
+                                class="label report-instance-table-label-overrides"
                               >
                                 How to fix
                               </th>
@@ -3863,13 +3857,11 @@ exports[`report package integration with issues 1`] = `
                                   class="howToFixContent"
                                 >
                                   <div>
-                                    <div
-                                      class="insights-fix-instruction-title"
-                                    >
+                                    <div>
                                       Fix the following:
                                     </div>
                                     <ul
-                                      class="insights-fix-instruction-list"
+                                      class="insightsFixInstructionList"
                                     >
                                       <li>
                                         Some page content is not contained by landmarks
@@ -3977,7 +3969,7 @@ exports[`report package integration with issues 1`] = `
               id="content-container-passed-checks-section"
             >
               <div
-                class="rule-details-group"
+                class="ruleDetailsGroup"
               >
                 <div
                   class="rule-detail"
@@ -4634,7 +4626,7 @@ exports[`report package integration with issues 1`] = `
               id="content-container-not-applicable-checks-section"
             >
               <div
-                class="rule-details-group"
+                class="ruleDetailsGroup"
               >
                 <div
                   class="rule-detail"
@@ -6526,6 +6518,7 @@ exports[`report package integration with no issues 1`] = `
       >
         <div
           class="resultSection"
+          data-automation-id="result-section"
         >
           <h2>
             <span
@@ -6694,7 +6687,7 @@ exports[`report package integration with no issues 1`] = `
               id="content-container-passed-checks-section"
             >
               <div
-                class="rule-details-group"
+                class="ruleDetailsGroup"
               >
                 <div
                   class="rule-detail"
@@ -8051,7 +8044,7 @@ exports[`report package integration with no issues 1`] = `
               id="content-container-not-applicable-checks-section"
             >
               <div
-                class="rule-details-group"
+                class="ruleDetailsGroup"
               >
                 <div
                   class="rule-detail"
