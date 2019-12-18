@@ -4,7 +4,7 @@ import { padStart } from 'lodash';
 
 export class ReportNameGenerator {
     public generateName(baseName: string, scanDate: Date, pageTitle: string): string {
-        return baseName + '_' + this.getDateSegment(scanDate) + '_' + this.getTitleSegment(pageTitle) + '.html';
+        return baseName + '_' + this.getDateSegment(scanDate) + '_' + this.getTitleSegment(pageTitle) + '.json';
     }
 
     private getDateSegment(scanDate: Date): string {

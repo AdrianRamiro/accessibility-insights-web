@@ -70,6 +70,7 @@ export class AssessmentReportHtmlGenerator {
 
         const reportBody = this.renderer.renderToStaticMarkup(reportElement);
 
-        return `<html lang="en">${reportBody}</html>`;
+        // return `<html lang="en">${reportBody}</html>`;
+        return JSON.stringify(model, null, 2);
     }
 }

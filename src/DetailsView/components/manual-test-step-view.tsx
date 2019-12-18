@@ -46,9 +46,9 @@ export class ManualTestStepView extends React.Component<ManualTestStepViewProps>
     }
 
     private renderTable(status: ManualTestStatus): JSX.Element {
-        if (status !== ManualTestStatus.FAIL) {
-            return null;
-        }
+        // if (status !== ManualTestStatus.FAIL) {
+        //     return null;
+        // }
         const columns = this.props.assessmentInstanceTableHandler.getColumnConfigsForCapturedInstance();
         const items = this.props.assessmentInstanceTableHandler.createCapturedInstanceTableItems(
             this.props.manualTestStepResultMap[this.props.step].instances,

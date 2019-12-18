@@ -130,13 +130,13 @@ export class AssessmentReportModelBuilder {
             }
 
             if (
-                storeData.testStepStatus[stepKey].stepFinalResult === ManualTestStatus.FAIL &&
+                // storeData.testStepStatus[stepKey].stepFinalResult === ManualTestStatus.FAIL &&
                 !(
                     storeData.manualTestStepResultMap[stepKey] === undefined ||
                     storeData.manualTestStepResultMap[stepKey].instances.length === 0
                 )
             ) {
-                return getManualData();
+                return getManualData().concat(getAssistedData());
             }
 
             return getAssistedData();
